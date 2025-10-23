@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Richfood Shop - Pembeli</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h2>🍛 RICHFOOD SHOP </h2>
+    <nav>
+      <a href="buyer.html">Home</a>
+      <a href="search.html">Search</a>
+      <a href="contact.html">Contact</a>
+      <a href="index.html">Keluar</a>
+    </nav>
+  </header>
+
+  <div class="product-list">
+    <div class="product-card">
+      <img src="risoles.jpg" alt="Risoles">
+      <h3>Risoles mayo</h3>
+      <p>Camilan gurih dengan isi smoked beef dan saus mayones.</p>
+      <p class="price"> <b>Rp3.000</b></p>
+      <button onclick="addToWishlist('Risoles')">Tambah ke Wishlist </button>
+    </div>
+    <div class="product-card">
+      <img src="tahu.jpg" alt="Tahu">
+      <h3>Tahu</h3>
+      <p>Camilan gurih dengan isi smoked beef dan saus mayones.</p>
+      <p class="price"> <b>Rp2.000</b></p>
+      <button onclick="addToWishlist('Tahu')">Tambah ke Wishlist</button>
+    </div>
+    <div class="product-card">
+      <img src="pie.jpg" alt="Pie">
+      <h3>Pie Susu</h3>
+      <p>Camilan gurih dengan isi smoked beef dan saus mayones.</p>
+      <p class="price"> <b>Rp5.000</b></p>
+      <button onclick="addToWishlist('Tahu')">Tambah ke Wishlist</button>
+    </div>
+  </div>
+</body>
+</html>
+
+    <!--<li><a onclick="showPage('home')">Home</a></li>>
+    <li><a onclick="showPage('search')">Search</a></li>
+    <li><a onclick="showPage('wishlist')">Wishlist</a></li>
+    <li><a onclick="showPage('contact')">Contact</a></li>
+  </ul>
+
+  <main>
+   
+    <div id="home" class="page active">
+      <h2>Richfood Shop</h2>
+      <p>Selamat datang! Pilih menu favoritmu 🍛</p>
+
+      <div class="menu-card">
+        <img src="risoles.jpg" alt="Risoles">
+        <h3>Risoles Mayo</h3>
+        <p>Camilan gurih dengan isi smoked beef dan saus mayones.</p>
+        <div class="price">Rp 3.000</div>
+        <button class="btn-pesan" onclick="addToWishlist('Risoles Mayo')">Tambah ke Wishlist</button>
+      </div>
+
+      <div class="menu-card">
+        <img src="tahu.jpg" alt="Tahu">
+        <h3>Tahu Mercon</h3>
+        <p>Tahu isi sambal pedas, cocok untuk pecinta pedas!</p>
+        <div class="price">Rp 2.000</div>
+        <button class="btn-pesan" onclick="addToWishlist('Tahu Mercon')">Tambah ke Wishlist</button>
+      </div>
+    </div>
+
+<div class="menu-card">
+        <img src="pie.jpg" alt="Pie">
+        <h3>Pie susu</h3>
+        <p>AI tidak jelas</p>
+        <div class="price">Rp 5.000</div>
+        <button class="btn-pesan" onclick="addToWishlist('Pie Susu')">Tambah ke Wishlist</button>
+      </div>
+    </div>
+
+   
+    <div id="search" class="page">
+      <h2>Cari Produk</h2>
+      <input type="text" id="searchBox" placeholder="Ketik nama produk..." onkeyup="filterProducts()">
+      <div id="searchResult"></div>
+    </div>
+
+    
+    <div id="wishlist" class="page">
+      <h2>Wishlist Saya</h2>
+      <ul id="wishlistList"></ul>
+    </div>
+
+   
+    <div id="contact" class="page">
+      <h2>Hubungi Kami</h2>
+      <p>Email: <strong>richfoodshop@email.com</strong></p>
+      <p>Telepon: <strong>0858.3211.0850</strong></p>
+      <p>Alamat: <strong>Jl. Tolak Miskin No. 33, Pythagoras</strong></p>
+    </div>
+  </main>
+
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+    }
+
+    const wishlist = [];
+
+    function addToWishlist(item) {
+      if (!wishlist.includes(item)) {
+        wishlist.push(item);
+        alert(item + ' ditambahkan ke wishlist!');
+        updateWishlist();
+      }
+    }
+
+    function updateWishlist() {
+      const list = document.getElementById('wishlistList');
+      list.innerHTML = wishlist.map(i => `<li>${i}</li>`).join('');
+    }
+
+    function filterProducts() {
+      const keyword = document.getElementById('searchBox').value.toLowerCase();
+      const products = ['Risoles Mayo', 'Tahu Mercon'];
+      const result = products.filter(p => p.toLowerCase().includes(keyword));
+      document.getElementById('searchResult').innerHTML = 
+        result.length ? result.map(r => `<p>${r}</p>`).join('') : '<p>Tidak ada hasil.</p>';
+    }
+  </script>
+</body>
+</html>
